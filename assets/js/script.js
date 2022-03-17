@@ -8,11 +8,12 @@ var current_task_color = '#ff6961';
 var future_task_color = '#77dd77';
 
 
-
+var tasks = JSON.parse(localStorage.getItem("tasks"));
 var workDo = $(".time-go").toArray();
 function setTimeWorkDo() {
+    
     var currentHour = parseInt(moment().format('kk')); //current hour as a military time 
-    console.log(currentHour, workDo);
+    
     
     // for each time block
     for (var i = 0; i < workDo.length; i++) {
@@ -30,6 +31,14 @@ function setTimeWorkDo() {
 
 setTimeWorkDo();
 
+
+function getStoredTasks() {
+    if (localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+}
 var inputGroup;
 var textHour;
 // on click of the save button
@@ -45,5 +54,9 @@ $(".saveBtn").on("click", function(){
     localStorage.setItem( textHour , JSON.stringify(inputGroup));
 
   })
-
+// Button for clear the schedule
+$("#clschedule").on("click", function(){
+    localStorage.clear();
+    location.reload();
+  }) 
 
