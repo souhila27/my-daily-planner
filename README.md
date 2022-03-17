@@ -13,7 +13,7 @@ creating a work day scheduler so the user can track there daily tasks
 . Bootstrap
 
 ## Website 
-
+https://souhila27.github.io/my-daily-planner/
 
 ## Work Page Sreenshots
 <img src="./assets/css/images/Screenshot 2022-03-17 113803.png">daily work image</img>
