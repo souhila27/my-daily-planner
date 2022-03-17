@@ -6,11 +6,24 @@ $("#currentDay").text(currentDate);
 
 var current_task_color = '#ff6961';
 var future_task_color = '#77dd77';
-
+var userInput;
+var hourSpan;
 // on click of the save button
-// reach into the html
-// get the value of the text box that matches the button
-// store that in local storage
+// Buttons (save to Local Storage)
+$(".saveBtn").on("click", function(){
+    // reach into the html
+    userInput = $(this).siblings(".form-control").val().trim();
+    console.log(userInput);
+    // get the value of the text box that matches the button
+    hourSpan = $(this).siblings(".input-group-prepend").text().trim();
+    console.log(hourSpan);
+    // store that in local storage
+    localStorage.setItem(hourSpan, JSON.stringify(userInput));
+
+  })
+
+
+
 var workDo = $(".time-go").toArray();
 function setTimeWorkDo() {
     var currentHour = parseInt(moment().format('kk')); //current hour as a military time 
