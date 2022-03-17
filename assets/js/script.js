@@ -6,21 +6,6 @@ $("#currentDay").text(currentDate);
 
 var current_task_color = '#ff6961';
 var future_task_color = '#77dd77';
-var userInput;
-var hourSpan;
-// on click of the save button
-// Buttons (save to Local Storage)
-$(".saveBtn").on("click", function(){
-    // reach into the html
-    userInput = $(this).siblings(".form-control").val().trim();
-    console.log(userInput);
-    // get the value of the text box that matches the button
-    hourSpan = $(this).siblings(".input-group-prepend").text().trim();
-    console.log(hourSpan);
-    // store that in local storage
-    localStorage.setItem(hourSpan, JSON.stringify(userInput));
-
-  })
 
 
 
@@ -44,4 +29,21 @@ function setTimeWorkDo() {
 }
 
 setTimeWorkDo();
+
+var inputGroup;
+var textHour;
+// on click of the save button
+// Buttons (save to Local Storage)
+$(".saveBtn").on("click", function(){
+    // reach into the html
+    inputGroup = $(this).siblings(".form-control").val().trim();
+    console.log(inputGroup);
+    // get the value of the text box that matches the button
+    textHour = $(this).siblings(".input-group-prepend").text().trim();
+    console.log( textHour );
+    // store that in local storage
+    localStorage.setItem( textHour , JSON.stringify(inputGroup));
+
+  })
+
 
