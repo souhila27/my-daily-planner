@@ -3,6 +3,7 @@ var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY h
 $("#currentDay").text(currentDate);
 
 
+
 var current_task_color = '#ff6961';
 var future_task_color = '#77dd77';
 
