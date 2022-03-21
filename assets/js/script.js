@@ -58,5 +58,6 @@ $(".saveBtn").on("click", function(){
 $("#clschedule").on("click", function(){
     localStorage.clear();
     location.reload();
-  }) 
+  });
+
 
